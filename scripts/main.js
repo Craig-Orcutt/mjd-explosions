@@ -1,7 +1,8 @@
 "use strict";
-
+const $ = require('jquery');
 const factory = require('./factory');
 const format = require('./formatter');
+const prodView = require('./prodView');
 // const acmeData = [];
 
 // factory.getCategories()
@@ -36,7 +37,8 @@ let promArr = [
 
 Promise.all(promArr)
 .then( (dataArr) =>{
-    format.formatData(dataArr);
+   let revisedProducts = format.formatData(dataArr);
+   prodView.displayProduct(revisedProducts);
 })
 .catch((err) =>{
     console.log(err);
