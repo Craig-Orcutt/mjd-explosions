@@ -1,6 +1,6 @@
 'use strict';
 // format the data from XHR requests
-
+const $ = require('jquery');
 
 
 module.exports.getCategories = () => {
